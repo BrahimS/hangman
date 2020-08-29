@@ -1,17 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import './style.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//import DashBoard from './components/Dashbord'
+class Letter extends Component {
+	render () {
+		return <span className="letter">{this.props.value}</span>
+	}
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class DashBoard extends Component {
+	render () {
+		let letters = []
+		this.props.word.split('').forEach((letter, index) => {
+			letters.push(<Letter value={letter} key={index} />)
+		})
+		return (
+			<div>
+				<h2>This is the dashboard</h2>
+				<div>{letters}</div>
+			</div>
+		)
+	}
+}
+class HangMan extends Component {
+	render () {
+		return (
+			<div>
+				<h1>My Hangman Game</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam facere
+					aliquam doloremque quam minus consequatur tenetur enim, quisquam amet, placeat
+					fugit! Dicta, temporibus. Optio, pariatur at velit quae aliquam cum.
+				</p>
+				<div>
+					<DashBoard word="Salamoalykoum" />
+				</div>
+			</div>
+		)
+	}
+}
+
+ReactDOM.render(<HangMan />, document.getElementById('root'))
