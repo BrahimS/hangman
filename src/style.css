@@ -1,12 +1,36 @@
 .letter {
-	background: transparent;
-	border: 1px solid gray;
-	text-align: center;
-	font-weight: bold;
-	line-height: 1.5;
+	background: white;
+	border: 1px solid grey;
+	float: left;
 	font-size: 24px;
-	padding: 8px;
-	margin: 0 5px;
-	width: 30px;
-	height: 30px;
+	font-weight: bold;
+	line-height: 34px;
+	height: 34px;
+	margin-right: -1px;
+	margin-top: -1px;
+	padding: 0;
+	text-align: center;
+	width: 34px;
+}
+
+.letter-button {
+	float: left;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 34px;
+	height: 34px;
+	margin-right: -1px;
+	margin-top: -1px;
+	padding: 0;
+	text-align: center;
+	width: 34px;
+	outline: none;
+}
+
+.found {
+	color: green;
+}
+
+.missed {
+	color: red;
 }
